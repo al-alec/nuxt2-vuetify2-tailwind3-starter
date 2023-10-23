@@ -14,7 +14,6 @@ export const getters = {
   user: state => state.user,
   token: state => state.token,
   isAuthenticated: state => state.user !== null,
-  isBusStationPersonnel: state => state.user !== null && state.user.type_user === 3,
   darkMode: state => state.darkMode,
   firebase_user: state => state.firebase_user,
   firebase_loggedin: state => state.firebase_loggedin
@@ -29,12 +28,12 @@ export const mutations = {
     state.country = country
   },
 
-  FETCH_USER_SUCCESS (state, user) {
-    if (user.isadmin) {
-      if (!JSON.parse(localStorage.getItem('country'))) { localStorage.setItem('country', JSON.stringify(user.pays)) }
-    }
-    state.user = user
-  },
+  // FETCH_USER_SUCCESS (state, user) {
+  //   if (user.isadmin) {
+  //     if (!JSON.parse(localStorage.getItem('country'))) { localStorage.setItem('country', JSON.stringify(user.pays)) }
+  //   }
+  //   state.user = user
+  // },
 
   FETCH_USER_FAILURE (state) {
     state.token = null

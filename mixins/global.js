@@ -32,7 +32,7 @@ extend('email', {
 })
 
 export default {
-  layout: "bus-manager",
+  layout: "master",
   components: {
     'validation-observer': ValidationObserver,
     'validation-provider': ValidationProvider,
@@ -77,16 +77,10 @@ export default {
   computed: {
     ...mapGetters('auth', [
       'isAuthenticated',
-      'isBusStationPersonnel',
       'user'
     ]),
     ...mapGetters('global', [
       'globalStateMessage'
     ]),
-    ...mapGetters('user', [
-      'selected_recherche_ticket_adresse_depart',
-      'selected_recherche_ticket_adresse_destination',
-      'selected_recherche_ticket_date_depart'
-    ])
   }
 }

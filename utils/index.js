@@ -6,7 +6,6 @@
  * @return {String|undefined}
  */
 export function cookieFromRequest (req, key) {
-  console.log(req, 'Kara events req')
   if (!req.headers.cookie) {
     return
   }
